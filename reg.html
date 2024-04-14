@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+             background-image: url('https://img.freepik.com/free-vector/buying-renting-new-used-speedy-sports-car_3446-651.jpg?w=740&t=st=1711003568~exp=1711004168~hmac=7d4ba7ff33559b5a2dd3cca2db90506e0c049afddbc63b77146f908c34c711ce'); 
+       
+
+       
+        } */
+        #booking_form{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            justify-content:space-evenly;
+        }
+        input{
+            border: 1px solid black;
+            width: 240px;
+            height: 30px;
+            border-radius: 10px;
+            /* background-color:azure; */
+            color:black;
+        }
+
+        .bgimage{
+            background-image: url('./background-car-img.webp');
+            height: 635px;
+            border-radius: 5px;
+        }
+        label{
+            /* background-color: aliceblue; */
+            border-radius: 5px;
+            font-size: large;    
+            font-weight: 100;
+            /* color: darkblue; */
+        }
+        h2{
+            text-align: center;
+            background-color: darkmagenta;
+            color: white;
+            padding: 3px;
+        }
+        .b_form_{
+          
+            padding: 50px;
+            border-radius: 15px;
+            background-color: rosybrown;
+        }
+   
+    </style>
+</head>
+<body>
+    <!-- <div id="booking_form"> -->
+ <div class="bgimage"> 
+    <div id="booking_form"> 
+       <h2> Register Here</h2> 
+ <div  class="b_form_"> 
+    <form >
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname" placeholder="Enter your name" required style="margin-left: 33px;"><br><br>
+        
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname"  style="margin-left: 33px;"><br><br>
+        
+        <label for="adnum">Aadhar Number</label>
+        <input type="num" name="adnum" id="adnum" ><br><br>
+        
+        <label for="phnum">Mobile Number</label>
+        <input type="tel" name="phnum" id="phnum" required><br><br>
+        
+        <label for="cname">Car Name</label>
+        <input type="text" name="cname" id="cname" style="margin-left: 40px;"><br><br>
+        
+        <label for="cid">Car Id</label>
+        <input type="num" name="cid" id="cid" style="margin-left: 67px;"><br><br>
+        
+        <label for="booking date">Start Date</label>
+        <input type="date" name="booking date " id="booking date" style="margin-left: 40px;" required><br><br>
+        
+        <label for="end date">End Date</label>
+        <input type="date" name="end date " id="end date" style="margin-left: 47px;" required><br><br>
+        
+        <input type="submit" value="submit"  style="margin-left: 135px; width: 180px;background-color: black;color: white; hover">
+
+     
+
+    </form>
+</div>
+    </div>
+    </div>
+
+  <script>
+    console.log(document.forms)
+
+    function displayLocalStorageData() {
+    var data=window.localStorage.getItem("hello")
+    var carData=JSON.parse(data)
+    console.log(carData)
+    document.getElementById("cname").value=carData["Carname"];
+    document.getElementById("cid").value=carData["Carid"];
+
+    }
+
+    window.onload = displayLocalStorageData;
+
+
+    document.forms[0].addEventListener("submit",(e)=>{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            e.preventDefault()
+
+            var booking_data={
+                fname:e.target[0].value,
+                lname:e.target[1].value,
+                adnum:e.target[2].value,
+                phnum:e.target[3].value,
+                cname:e.target[4].value,
+                cid:e.target[5].value,
+                "booking date":e.target[6].value,
+                "end date":e.target[7].value,
+            }
+            console.log(booking_data.cid)
+
+       
+            let user_records = JSON.parse(localStorage.getItem("usersCarInfo")) || [];
+            // var user_records=[{
+            //     cid:101
+            // }]
+
+            function checkData(val){
+                return val.cid==booking_data.cid
+             }
+
+             console.log(user_records.some(checkData));
+
+
+            if(user_records.some(checkData)){
+                alert(" Sorry! This Car is Already Booked by some one This car is available after fewdays")
+            }
+            else{
+                user_records.push(booking_data)
+                window.localStorage.setItem("usersCarInfo",JSON.stringify(user_records));
+                alert("booking Successfull " + "\n" +" Name: "+ booking_data.fname+"\n"+"  adharNO: "+booking_data.adnum+"\n"+" phoneNO: "+booking_data.phnum+"\n"+" carName: "+booking_data.cname+"\n"+" Car-Id: "+booking_data.cid+"\n"+" booking Date: "+booking_data["booking date"]+"\n"+" end Date: "+booking_data["end date"])
+                // window.location.assign("./ex.html")
+                
+            }
+           
+           
+            e.target[0].value="";
+            e.target[1].value="";
+            e.target[2].value="";
+            e.target[3].value="";
+            e.target[4].value="";
+            e.target[5].value="";
+            e.target[6].value="";
+            e.target[7].value="";
+    })
+
+
+    
+  </script>
+
+
+    
+</body>
+</html>

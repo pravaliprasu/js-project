@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    
+      h1{
+        text-align: center;
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    
+   
+               <h1>CHOOSE  YOUR  FAVOURITE  CAR</h1>
+               <script>
+      var obj = [
+        {
+          Carname: "AUDI CAR",
+          Carid:"101",
+          Seats: "4 seats",
+          Aboutcar:"audi car is a perfect car  for comfort and premium features",
+          Fuel: "petrol",
+          Amountperday: "2000/-",
+          image: "./audi.jpg",
+        },
+        {
+          Carname: "EDGA CAR",
+          Carid:"102",
+          Seats: "4 seats",
+          Aboutcar:"edga car is a perfect car for comfort and premium features",
+          Fuel: "petrol",
+          Amountperday: "1800/-",
+          image: "./edga.jpeg",
+        },
+        {
+          Carname : "FIAT CAR",
+          Carid:"103",
+          Seats :"5 seats",
+          Aboutcar :"fiat car is a perfect car for comfort and premium features",
+          Fuel :"petrol",
+          Amountperday :"1900/-",
+          image:"./fiat.jpg"
+        },
+        {
+          Carname : "NISSAN CAR",
+          Carid:"104",
+          Seats :"4 seats",
+          Aboutcar :"nissan car is a perfect car for comfort and premium features",
+          Fuel :"diesel",
+          Amountperday:"1500/-",
+          image:"./nissan.jpg"
+        },
+        {
+          Carname : "BMW CAR",
+          Carid:"105",
+          Seats :"8 seats",
+          Aboutcar :"bmw car is a perfect car for comfort and premium features",
+          Fuel :"petrol",
+          Amountperday :"2500/-",
+          image: "./rangerover.webp"
+        },
+ 
+       {
+          Carname: "HYUNDAI CAR",
+          Carid:"106",
+          Seats: "6 seats",
+          Aboutcar:"hyundai car is a perfect car for comfort and premium features",
+          Fuel: "diesel",
+          Amountperday: "1500/-",
+          image: "./hyundai.jpg",
+        
+        }
+      ]
+
+      for (let i = 0; i <= obj.length; i++) {
+      
+         var div=document.createElement("div1")
+         document.body.appendChild(div)
+         var imgg = document.createElement("img");
+         imgg.setAttribute("src", obj[i].image);
+          imgg.style.width = "400px";
+          div.appendChild(imgg)
+          div.style.marginLeft="50px"
+          div.style.marginTop="50px"
+          imgg.style.border="1px solid"
+          imgg.style.borderRadius="20px"
+
+         imgg.addEventListener("click", ()=> {
+          window.localStorage.setItem("hello", JSON.stringify(obj[i]));
+          // let dup = JSON.parse(localStorage.getItem("usersCarInfo")) || [];
+        
+          window.location.assign("./fake1.html")
+           
+        });
+          
+      } 
+
+
+
+
+
+     
+
+   
+    </script>
+  </body>
+</html>

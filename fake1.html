@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        h1{
+           
+            color:green;
+        }
+    </style>
+</head>
+<body>
+ 
+    <script>
+   
+     var n=window.localStorage.getItem("hello")
+     var cc=JSON.parse(n)
+     console.log(cc);
+
+    var div1=document.createElement("div")
+    document.body.appendChild(div1)
+    div1.style.display="inline"
+
+     var z=document.createElement("h1")
+     document.body.appendChild(z)
+     z.innerText=cc["Carname"]
+     div1.appendChild(z)
+     z.style.marginLeft="650px"
+
+
+     var imgg=document.createElement("img")
+     document.body.appendChild(imgg)
+     imgg.setAttribute("src",cc["image"])
+     imgg.style.width="500px"
+     imgg.style.marginLeft="500px"
+     div1.appendChild(imgg)
+     
+     var z=document.createElement("h2")
+     document.body.appendChild(z)
+     z.innerText=cc["Carname"]
+     z.style.marginLeft="850px"
+     div1.appendChild(z)
+
+     var p=document.createElement("h2")
+     document.body.appendChild(p)
+     p.innerText=cc["Carid"]
+     p.style.marginLeft="850px"
+     div1.appendChild(p)
+
+     var y=document.createElement("h2")
+     document.body.appendChild(y)
+     y.innerText=cc["Seats"]
+     y.style.marginLeft="850px"
+     div1.appendChild(y)
+
+    //  var x=document.createElement("h2")
+    //  document.body.appendChild(x)
+    //  x.innerText=cc["Aboutcar"]
+    //  x.style.marginLeft="800px"
+    //  div1.appendChild(x)
+
+    //  var w=document.createElement("h2")
+    //  document.body.appendChild(w)
+    //  w.innerText=cc["Fuel"]
+    //  w.style.marginLeft="800px"
+    //  div1.appendChild(w)
+
+     var v=document.createElement("h2")
+     document.body.appendChild(v)
+     v.innerText=cc["Amountperday"]
+     v.style.marginLeft="850px"
+     div1.appendChild(v)
+
+     var div2=document.createElement("div")
+    document.body.appendChild(div2)
+    div2.style.display="inline"
+   
+
+    var a=document.createElement("h2")
+     document.body.appendChild(a)
+     a.innerText="Car name"
+     a.style.marginLeft="550px"
+     a.style.marginTop="-190px"
+     div2.appendChild(a)
+
+     var m=document.createElement("h2")
+     document.body.appendChild(m)
+     m.innerText="Car id"
+     m.style.marginLeft="550px"
+    //  m.style.marginTop="-235px"
+     div2.appendChild(m)
+
+     var b=document.createElement("h2")
+     document.body.appendChild(b)
+     b.innerText="Seats"
+     b.style.marginLeft="550px"
+     div2.appendChild(b)
+
+    //  var c=document.createElement("h2")
+    //  document.body.appendChild(c)
+    //  c.innerText="About car"
+    //  c.style.marginLeft="500px"
+    //  div2.appendChild(c)
+
+    //  var d=document.createElement("h2")
+    //  document.body.appendChild(d)
+    //  d.innerText="Fuel"
+    //  d.style.marginLeft="500px"
+    //  div2.appendChild(d)
+
+     var e=document.createElement("h2")
+     document.body.appendChild(e)
+     e.innerText="Amount per day"
+     e.style.marginLeft="550px"
+     div2.appendChild(e)
+
+  
+
+     var btn1=document.createElement("button")
+     document.body.appendChild(btn1)
+     btn1.innerText="BACK TO HOME "
+     btn1.setAttribute("style","margin-Left:550px;font-size:25px;background-Color:grey;font-Style:italic;color:black;  font-family: 'Times New Roman', Times, serif;padding:7px")
+
+
+
+btn1.addEventListener("click",function(){
+    window.location.assign("./index1.html")
+})
+
+
+
+
+var btn2=document.createElement("button")
+document.body.appendChild(btn2)
+btn2.innerText="BOOK HERE"
+btn2.setAttribute("style","margin-Left:70px;font-size:25px;background-Color:grey;font-Style:italic;color:black;  font-family: 'Times New Roman', Times, serif;padding:7px")
+
+
+btn2.addEventListener("click",function(){
+
+    window.location.assign("./reg.html")
+            
+})
+
+    </script>
+</body>
+</html>

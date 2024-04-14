@@ -1,0 +1,373 @@
+ <!-- <!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+        var a=document.createElement("h1")
+        document.body.appendChild(a)
+        a.innerText="Welcome To Bidding Zone";
+         a.setAttribute("style","text-align:center;font-style:italic;color:green;")
+
+
+    //   var div1=document.createElement("div")
+    //   document.body.appendChild(div1)
+    //   div1.setAttribute("style","width:250px;border:1px solid gray;margin-left:630px;")
+
+    //   var imgg=document.createElement("img")
+    //   div1.appendChild(imgg)   
+    //   var z=window.localStorage.getItem("total")  
+    //   var y=JSON.parse(z)
+    // //   console.log(z);
+    //  imgg.setAttribute("src",y["image"])
+    //  imgg.setAttribute("style","width:250px")
+
+
+     var div2=document.createElement("div")
+     document.body.appendChild(div2)
+     div2.setAttribute("style","width:250px;height:250px;border:1px solid gray;margin-left:250px;margin-top:50px")
+      div2.style.display="inline-block";
+     
+
+
+     var div3=document.createElement("div")
+     document.body.appendChild(div3)
+     div3.setAttribute("style","width:250px;height:250px;border:1px solid gray;margin-left:130px;margin-top:50px")
+     div3.style.display="inline-block";
+
+     var div4=document.createElement("div")
+     document.body.appendChild(div4)
+     div4.setAttribute("style","width:250px;height:250px;border:1px solid gray;margin-left:130px;margin-top:50px")
+     div4.style.display="inline-block";
+
+     var user=document.createElement("h3")
+     div2.appendChild(user)
+     user.innerText="USER";
+     user.setAttribute("style","margin-left:100px")
+     var user=document.createElement("h3")
+     div2.appendChild(user)
+     user.innerText="A";
+     user.setAttribute("style","margin-left:120px")
+
+
+
+     var user=document.createElement("h3")
+     div3.appendChild(user)
+     user.innerText="USER";
+     user.setAttribute("style","margin-left:100px")
+     var user=document.createElement("h3")
+     div3.appendChild(user)
+     user.innerText="B";
+     user.setAttribute("style","margin-left:120px")
+
+
+
+     var user=document.createElement("h3")
+     div4.appendChild(user)
+     user.innerText="USER";
+     user.setAttribute("style","margin-left:100px")
+     var user=document.createElement("h3")
+     div4.appendChild(user)
+     user.innerText="C";
+     user.setAttribute("style","margin-left:120px")
+     
+
+
+     var enter=document.createElement("p")
+     div2.appendChild(enter)
+     enter.innerText="Enter Amount"
+     enter.setAttribute("style","margin-left:80px")
+
+    var form=document.createElement("form")
+    document.body.appendChild(form)
+    var input=document.createElement("input")
+    form.appendChild(input)
+    div2.appendChild(form)
+    input.innerText="text";
+    input.setAttribute("style","margin-left:40px;")
+    
+
+    var btn1=document.createElement("button")
+     div2.appendChild(btn1)
+     btn1.innerText="Bid";
+     btn1.setAttribute("style","margin-left:90px;margin-top:20px;width:80px")
+    
+      
+     var enter=document.createElement("p")
+     div3.appendChild(enter)
+     enter.innerText="Enter Amount"
+     enter.setAttribute("style","margin-left:80px")
+     
+    var form=document.createElement("form")
+    document.body.appendChild(form)
+    var input=document.createElement("input")
+    form.appendChild(input)
+    div3.appendChild(form)
+    input.innerHTML="text";
+    input.setAttribute("style","margin-left:40px;")
+
+    var btn1=document.createElement("button")
+     div3.appendChild(btn1)
+     btn1.innerText="Bid";
+     btn1.setAttribute("style","margin-left:90px;margin-top:20px;width:80px")
+     
+
+     var enter=document.createElement("p")
+     div4.appendChild(enter)
+     enter.innerText="Enter Amount"
+     enter.setAttribute("style","margin-left:80px")
+     
+    var form=document.createElement("form")
+    document.body.appendChild(form)
+    var input=document.createElement("input")
+    form.appendChild(input)
+    div4.appendChild(form)
+    input.innerHTML="text"
+    input.setAttribute("style","margin-left:40px;")
+
+    var btn1=document.createElement("button")
+     div4.appendChild(btn1)
+     btn1.innerText="Bid";
+     btn1.setAttribute("style","margin-left:90px;margin-top:20px;width:80px")
+
+   
+
+ var time=document.createElement("div")
+ document.body.appendChild(time)
+ time.innerText="00:00";
+
+
+ (function(){
+
+    var sec=0;
+    div=setInterval(()=>{
+         
+        time.innerHTML="00:"+sec;
+
+        sec++;
+       
+      
+    },1000)
+       
+
+
+ })()
+ 
+       var arr=[];
+       
+       
+       btn1.addEventListener("click",function (e){
+        e.preventDefault();
+       console.log(e); 
+       
+       
+      var obj={
+        enteramount:e.target.value
+        
+
+       }
+       arr.push(obj);
+       
+       console.log(arr);
+
+       e.target.value="";
+      
+
+       window.localStorage.setItem("enteramount",JSON.stringify(arr))  
+    }) 
+    
+      
+     
+    
+
+
+
+    </script>
+</body>
+ </html>    
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            border: 2px solid;
+           width: 300px;
+           height: 250px;
+           display: inline-block;
+        }
+        .b{
+            border: 2px solid;
+           width: 300px;
+           height: 250px;
+           display: inline-block;
+        }
+        .c{
+            border: 2px solid;
+           width: 300px;
+           height: 250px;
+           display: inline-block;
+        }
+        .z{
+            border: 2px solid;
+           width: 250px;
+           height: 250px;
+           margin-left: 600px;
+        }
+        h2{
+            margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h2>WELCOME TO YOUR BIDDING ZONE</h2>
+    <div class="z"></div>
+    <div class="a">
+        <h3>USER A</h3>
+        <form>
+
+            <label>enter amount</label>
+            <input type="text"><br>
+            <input type="submit"value="bid" >
+        </form>
+    </div>
+    <div class="b">
+        <h3>USER B</h3>
+        <form>
+            <label>enter amount</label>
+            <input type="text"><br>
+            <input type="submit" value="bid">
+        </form>
+    </div>
+    <div class="c">
+        <h3>USER C
+
+        </h3>
+        <form>
+            <label>enter amount</label>
+            <input type="text"><br>
+            <input type="submit" value="bid">
+        </form>
+    </div>
+    <script>
+       var forms=document.forms
+    //    console.log(forms[0])
+    var arr=[]
+       forms[0].addEventListener("submit",function(e){
+        e.preventDefault()
+        var obj={
+            enter:e.target[0].value
+        }
+        arr.push(obj)
+             e.target[0].value=""
+             window.localStorage.setItem("money",JSON.stringify(arr))
+       })
+
+       var forms=document.forms
+    //    console.log(forms[1])
+    var arr1=[]
+       forms[1].addEventListener("submit",function(e){
+        e.preventDefault()
+        var obj={
+            your:e.target[0].value
+        }
+        arr1.push(obj)
+             e.target[0].value=""
+             window.localStorage.setItem("mani",JSON.stringify(arr1))
+       })
+
+       var forms=document.forms
+    //    console.log(forms[2])
+    var arr2=[]
+       forms[2].addEventListener("submit",function(e){
+        e.preventDefault()
+        var obj={
+            amount:e.target[0].value
+        }
+        arr2.push(obj)
+             e.target[0].value=""
+             window.localStorage.setItem("pravali",JSON.stringify(arr2))
+       })
+    </script>
+</body> -->
+ <!-- </html>    -->
+
+
+<!-- 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        var div1=document.createElement("div")
+        document.body.appendChild(div1)
+        div1.style.border="1px solid"
+        div1.style.width="250px"
+        var div2=document.createElement("div")
+        document.body.appendChild(div2)
+        div2.style.border="1px solid"
+        div2.style.width="250px"
+        var div3=document.createElement("div")
+        document.body.appendChild(div3)
+        div3.style.border="1px solid"
+        div3.style.width="250px"
+        var forms=document.createElement("forms")
+        document.body.appendChild(forms)
+        var input1=document.createElement("input")
+        input1.innerText="type"
+        forms.appendChild(input1)
+    </script>
+ </body>
+ </html> --> -->
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+ <!-- Bootstrap 5 CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ <!-- </head>
+ <body> -->
+ <!-- Start of Button -->
+ <button type="button" class="btn btn-primary">go to next page</button>
+ <!-- End of Button -->
+ <!-- Bootstrap 5 Scripts -->
+ <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
+ <!-- </body>
+ </html> -->
+
+
+
+ <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+    </label>
+  </div>
